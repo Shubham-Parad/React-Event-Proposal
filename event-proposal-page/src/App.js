@@ -1,10 +1,10 @@
 import React from "react";
 //import Userhome from './Components/User/Userhome';
-import Userreg from "./Components/User/Userreg";
+//import Userreg from "./Components/User/Userreg";
 
 
 function App(){
-  return <Userreg/>
+  return <></>
 }
 
 export default App;
