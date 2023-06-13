@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import Home from '../Home/Home';
-import { Link } from "react-router-dom";
+import React, { useState,useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import Home from '../Home/Home'
 import { useNavigate } from "react-router-dom";
 
-function Vendorreg() {
+
+function Userreg() {
   const navigate = useNavigate();
 
   const [regForm,setRegForm]=useState({
@@ -34,8 +35,7 @@ function Vendorreg() {
      else
        {
       
-            fetch("https://proposal-back-end.onrender.com/register",{
-
+        fetch("https://proposal-back-end.onrender.com/user/register",{
         method:"POST",
         crossDoamin : true,
         headers:{"content-type":"application/json","accept":"application/json","Access-Control-Allow-Origin" : "*"},
@@ -44,23 +44,23 @@ function Vendorreg() {
     })
     .then((res)=>res.json())
     .then((data)=>{
-      if (data.status == "ok")
+      if (data.status === "ok")
       {
        alert("registration Successful")
-       navigate("/")
+       navigate("/User")
       }
-      if (data.status == "error"){
+      if (data.status === "error"){
         alert(`${data.error}`)
       }
-      console.log(data ,"VendorRegisterd")})
+      console.log(data ,"UserRegisterd")})
     
     .catch((err)=>{
       console.log(err)})
      }}
   
-
   return (
     <div>
+      <div>
       <Home />
       <div className="Logo">LOGO</div>
       <div className="Text">
@@ -70,13 +70,8 @@ function Vendorreg() {
       </div>
       <div className="form-box-reg">
         <div className="top">
-          <p className="vendor">Vendor</p>
-          <Link
-            to="/User"
-            style={{ textDecoration: "none", marginTop: "15px" }}
-          >
-            User
-          </Link>
+        <Link to="/" style={{textDecoration:'none', marginTop:'15px'}}>Vendor</Link>
+        <p style={{}}>User</p>
         </div>
         <div className="heading">
             <h2>Register in your account</h2>
@@ -85,11 +80,11 @@ function Vendorreg() {
             <form method="post" style={{margin:'0px 0px 0px 0px'}} onSubmit={submitform}>
                 <div className="input">
                     {" "}
-                    <input type="text" placeholder="Name" style={{width:'86%'}}  onChange={e=>updateData(e,"name")} required/>
+                    <input type="text" placeholder="Name" style={{width:'86%'}} onChange={e=>updateData(e,"name")} required/>
                 </div>
                 <div className="input">
                     {" "}
-                    <input type="email" placeholder="Email" style={{width:'86%'}} onChange={e=>updateData(e,"email")} required/>
+                    <input type="email" placeholder="Email" style={{width:'86%'}} onChange={e=>updateData(e,"email")} required />
                 </div>
                 <div className="input">
                     {" "}
@@ -107,7 +102,7 @@ function Vendorreg() {
                 <div className="regfooter">
                 <div className="signin">
                   {" "}
-                  <Link to="/" style={{textDecoration:'none'}}>Sign In</Link>{" "}
+                  <Link to="/User" style={{textDecoration:'none'}}>Sign In</Link>{" "}
                 </div>
                 <button className="regbutton" type="submit">
                   REGISTER
@@ -117,7 +112,8 @@ function Vendorreg() {
           </div>
       </div>
     </div>
-  );
+    </div>
+  )
 }
 
-export default Vendorreg;
+export default Userreg
