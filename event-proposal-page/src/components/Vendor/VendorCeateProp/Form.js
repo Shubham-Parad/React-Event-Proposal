@@ -56,8 +56,8 @@ function Form() {
       data.append('file',files[0])
       data.append('upload_preset','events')
       setLoading(true)
-      // const res = await fetch("https://api.cloudinary.com/v1_1/dhryrs3lr/image/upload",
-      const res = await fetch("cloudinary://879597163314427:eR_7w_fgQlHoYakXzGS3FInh8UM@dkvqrkxjb/image/upload",
+       const res = await fetch("https://api.cloudinary.com/v1_1/dhryrs3lr/image/upload",
+     
       {
         method :'POST',
         body:data
