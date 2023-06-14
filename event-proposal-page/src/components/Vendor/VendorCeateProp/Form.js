@@ -33,7 +33,7 @@ function Form() {
             formData.append("description", regForm.description);
             formData.append("events", regForm.events);
             formData.append("token", regForm.token);
-       const res = await axios.post("https://event-proposal-x4iw.onrender.com/createproposal", formData);
+       const res = await axios.post("https://event-proposal-iueg.onrender.com/createproposal", formData);
        if (res.data.status == "ok")
       {
        alert("Proposal Created")
@@ -54,9 +54,10 @@ function Form() {
       const files = e.target.files
       const data = new FormData();
       data.append('file',files[0])
-      data.append('upload_preset','events')
+      data.append('upload_preset','event-proposal')
+      data.append('cloud_name','dh5t8eajl')
       setLoading(true)
-       const res = await fetch("https://api.cloudinary.com/v1_1/dhryrs3lr/image/upload",
+       const res = await fetch("https://api.cloudinary.com/v1_1/dh5t8eajl/image/upload",
      
       {
         method :'POST',
@@ -162,7 +163,7 @@ function Form() {
             <input type="text" style={{ width: "525px", height: "116px" }} onChange={e=>updateData(e,"events")} />
           </div>
         </div>
-        <button style={{margin: '20px 3px 0px 482px'}}>Add</button>
+        <button style={{margin: '20px 3px 0px 482px'}} className="btn">Add</button>
       </form>
     </div>
   );

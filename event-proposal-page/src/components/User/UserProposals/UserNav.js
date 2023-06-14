@@ -15,15 +15,12 @@ function UserNav() {
       <div className="venlogo">
         <b>LOGO</b>
       </div>
-  
       <div className="name">
         <b>{localStorage.getItem("userName")}</b>
       </div>
-      <div className="dropdown">
-        {/**class */}
+      <div class="dropdown">
         <div className="imgven"></div>
-        <div className="dropdown-content">
-          {/**class */}
+        <div class="dropdown-content">
           <Link onClick={logout} to="/User">Log Out</Link>
         </div>
       </div>

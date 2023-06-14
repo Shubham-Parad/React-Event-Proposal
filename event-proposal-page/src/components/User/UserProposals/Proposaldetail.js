@@ -16,8 +16,7 @@ function Proposaldetail(props) {
   console.log(id);
 
   const selectProposal = () =>{
-    //fetch("https://proposal-back-end.onrender.com/selectproposal",{
-        fetch("localhost:3000",{
+    fetch("https://event-proposal-iueg.onrender.com/selectproposal",{
       method:"POST",
       crossDoamin : true,
       headers:{"content-type":"application/json","accept":"application/json","Access-Control-Allow-Origin" : "*"},
@@ -36,8 +35,7 @@ function Proposaldetail(props) {
   }
 
   const getProposaldata = () => {
-   // fetch(`https://proposal-back-end.onrender.com/getproposal/${id}`, {
-     fetch(`http://localhost:3000/${id}`, {
+    fetch(`https://event-proposal-iueg.onrender.com/getproposal/${id}`, {
       method: "GET",
       crossDoamin: true,
       headers: {
@@ -66,7 +64,8 @@ function Proposaldetail(props) {
 
   console.log(proposal?.vendorName);
 
-  return  <>
+  return (
+    <>
       <UserNav />
       <div className="line"></div>
       <div className="proposaldetailcontainer">
@@ -259,7 +258,7 @@ Book a venue at least 8 months in advance so that you will have enough time to p
         </div>
       </div>
     </>
-  ;
+  );
 }
 
 export default Proposaldetail;

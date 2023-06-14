@@ -1,15 +1,12 @@
-
 import { useEffect, useState, navigate } from "react";
 import React from "react";
 import "./Proposal.css";
 import { Link } from "react-router-dom";
-import Proposaldetail from './Proposaldetail';
+import Proposaldetail from "./Proposaldetail";
 
 function Proposal(props) {
- 
   console.log(props.data._id)
 
-  // <div className="userproposal">
   return (
     <>
       <div className="userproposal">

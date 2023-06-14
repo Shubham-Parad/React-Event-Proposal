@@ -6,7 +6,7 @@ import Vendorreg from "../src/components/Vendor/Vendorreg";
 import Userreg from "./components/User/Userreg";
 import Navbar from "./components/Vendor/VendorProp/Navbar";
 import VendorProp from "../src/components/Vendor/VendorProp/VendorProp";
-import Userhome from "../src/components/User/UserHome"
+import Userhome from "../src/components/User/Userhome"
 import Vendorhome from "../src/components/Vendor/Vendorhome"
 import Userprop from "./components/User/UserProposals/Userprop";
 import Proposaldetail from "./components/User/UserProposals/Proposaldetail";

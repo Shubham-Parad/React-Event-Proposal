@@ -5,44 +5,20 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "./Context";
-
+import "./Userprop.css"
 function Userprop() {
   const navigate = useNavigate();
   const [proposal, setProposal] = useState([]);
   const { select } = useContext(Context);
-  const [getdeselect ,setGetdeselect]=useState(true);
+  const [getdeselect, setGetdeselect] = useState(true);
 
-  function deleteselect(){
+  function deleteselect() {
     localStorage.removeItem("selectedproposal");
     setGetdeselect(false)
   }
-  // const [getselected , setGetSelected] = useState([]);
-  // const [vendor,setVendor]=useState([]);
-  // console.log(select.length===0 ? "false" : "true");
-  //   console.log(select._id)
-  //  console.log(getselected)
-  // const selectedProposal = ()=>{
-  //   fetch(`/getselectedproposals/${select._id}`, {
-  //     method: "GET",
-  //     crossDoamin: true,
-  //     headers: {
-  //       "content-type": "application/json",
-  //       accept: "application/json",
-  //       "Access-Control-Allow-Origin": "*",
-  //     },
-
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //     setGetSelected(data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
 
   const getProposaldata = () => {
-    fetch("https://proposal-back-end.onrender.com/proposals", {
+    fetch("https://event-proposal-iueg.onrender.com/proposals", {
       method: "GET",
       crossDoamin: true,
       headers: {
@@ -59,14 +35,8 @@ function Userprop() {
         console.log(err);
       });
   };
-  // console.log(proposal)
-  // useEffect(() => {
-  //   selectedProposal();
-
-  // }, [select]);
 
   useEffect(() => {
-    // selectedProposal();
     getProposaldata();
     if (
       !localStorage.getItem("vendorToken") &&
@@ -76,9 +46,9 @@ function Userprop() {
     }
   }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
 
-  },[getdeselect])
+  }, [getdeselect])
 
   return (
     <>
